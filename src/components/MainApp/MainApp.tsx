@@ -21,9 +21,12 @@ export const MainApp = () => {
                 <div className="container">
                     <div className="grid grid-6 grid-6-gap">
                         <div className="item-card">
+                            <h1>Input</h1>
                             <input type="button" value="Upload" />
                         </div>
-                        <div className="item-card"></div>
+                        <div className="item-card">
+                            <h1>Result</h1>
+                        </div>
                     </div>
                 </div>
             </main>
