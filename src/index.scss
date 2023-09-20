@@ -3,6 +3,7 @@
 * {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
+    --primary: #1ab69d;
 }
 
 body {
@@ -12,7 +13,7 @@ body {
 }
 
 .primary {
-    color: #1ab69d;
+    color: var(--primary);
 }
 
 a:visited {
