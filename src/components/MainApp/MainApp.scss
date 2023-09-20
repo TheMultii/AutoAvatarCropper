@@ -1,6 +1,5 @@
 main {
-    min-width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
 
     display: flex;
     flex-direction: row;
@@ -15,8 +14,8 @@ main {
         content: "";
         top: 0;
         left: 0;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
         z-index: -2;
         background-image: url("/bright-dreamy-background.jpg");
         background-size: cover;
@@ -29,8 +28,8 @@ main {
         content: "";
         top: 0;
         left: 0;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
         z-index: -1;
         background-color: rgba(255, 255, 255, 0.45);
     }

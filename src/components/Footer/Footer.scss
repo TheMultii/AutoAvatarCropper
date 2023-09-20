@@ -1,0 +1,55 @@
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f7ff;
+    position: relative;
+    overflow: hidden;
+
+    div.container {
+        width: 80vw;
+        height: 55px;
+        margin: 12px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    div.randomText {
+        opacity: 0.05;
+        word-break: break-all;
+        position: absolute;
+        top: 0;
+        left: 0;
+        user-select: none;
+        pointer-events: none;
+    }
+
+    h1,
+    h2 {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    h1 {
+        font-weight: 500;
+    }
+
+    h2 {
+        font-weight: 400;
+        color: #575757;
+    }
+
+    p {
+        margin: 8px 0 0 0;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    div.container {
+        width: 95vw;
+    }
+}
