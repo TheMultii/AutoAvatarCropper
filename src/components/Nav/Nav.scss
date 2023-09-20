@@ -10,6 +10,7 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
+    z-index: 999;
 
     div.gradient-border {
         margin: 0 24px;
