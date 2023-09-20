@@ -142,10 +142,31 @@ main {
     }
 }
 
+@media screen and (max-width: 900px) {
+    main .grid-6 {
+        grid-template-columns: 1fr !important;
+
+        & > div {
+            width: 70%;
+            justify-self: center;
+
+            &:not(:last-child) {
+                margin-bottom: 24px;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 768px) {
     header > .container > h1 {
         font-size: 60px;
         line-height: 64px;
+    }
+
+    main .grid-6 {
+        & > div {
+            width: 100%;
+        }
     }
 }
 
