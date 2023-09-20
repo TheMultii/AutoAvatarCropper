@@ -5,7 +5,7 @@ import "./MainApp.scss";
 export const MainApp = () => {
     return (
         <>
-            <main>
+            <header>
                 <Nav />
                 <div className="container">
                     <h1>
@@ -15,6 +15,7 @@ export const MainApp = () => {
                     </h1>
                     <p>Powered by AI</p>
                 </div>
+            </header>
             </main>
             <Footer />
         </>
