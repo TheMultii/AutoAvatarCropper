@@ -10,6 +10,9 @@ export const Nav = () => {
                 />
             </div>
             <h1>Auto Avatar Cropper</h1>
+            <ul>
+                <li>FAQ</li>
+            </ul>
         </nav>
     );
 };
