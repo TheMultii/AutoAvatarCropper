@@ -66,6 +66,11 @@ main {
     justify-content: center;
     align-items: center;
 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    background-image: url("/bg.svg");
+
     .container {
         --margin: 12px;
         width: 80vw;
