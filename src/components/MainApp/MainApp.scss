@@ -156,6 +156,7 @@ main {
         width: calc(100% - 80px);
         border-radius: 4px !important;
         border: 2px solid transparent;
+        cursor: pointer;
 
         &:hover {
             background: color-mix(in srgb, var(--primary), #000 15%);
