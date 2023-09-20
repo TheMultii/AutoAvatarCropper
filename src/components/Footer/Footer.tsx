@@ -53,8 +53,9 @@ export const Footer = () => {
                         href="https://github.com/TheMultii/AutoAvatarCropper"
                         target="_blank"
                     >
-                        GitHub.
+                        GitHub
                     </a>
+                    .
                 </p>
             </div>
         </footer>
