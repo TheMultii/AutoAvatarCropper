@@ -1,0 +1,101 @@
+nav {
+    position: fixed;
+    width: 80vw;
+    height: 55px;
+    margin: 12px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 20px 50px 0 rgba(149, 52, 188, 0.24);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    div.gradient-border {
+        margin: 0 24px;
+        --border-width: 3px;
+
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 37px;
+        height: 37px;
+        border-radius: 999px;
+        border-radius: var(--border-width);
+
+        &::after {
+            position: absolute;
+            content: "";
+            top: calc(-1 * var(--border-width));
+            left: calc(-1 * var(--border-width));
+            z-index: -1;
+            width: calc(100% + var(--border-width) * 2);
+            height: calc(100% + var(--border-width) * 2);
+            background: linear-gradient(
+                60deg,
+                hsl(224, 85%, 66%),
+                hsl(269, 85%, 66%),
+                hsl(314, 85%, 66%),
+                hsl(359, 85%, 66%),
+                hsl(44, 85%, 66%),
+                hsl(89, 85%, 66%),
+                hsl(134, 85%, 66%),
+                hsl(179, 85%, 66%)
+            );
+            background-size: 300% 300%;
+            background-position: 0 50%;
+            border-radius: 999px;
+            animation: moveGradient 4s alternate infinite;
+        }
+    }
+
+    img {
+        width: 40px;
+        height: 40px;
+        user-select: none;
+        cursor: pointer;
+        animation: scaleImage 5s alternate infinite;
+        transform: scale(1);
+        transition: all 0.25s ease-in-out;
+
+        &:hover {
+            animation-play-state: paused;
+            transform: scale(0.95);
+        }
+    }
+
+    h1 {
+        margin: 0;
+        font-weight: 500;
+        font-size: 13px;
+    }
+}
+
+@keyframes moveGradient {
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes scaleImage {
+    50% {
+        transform: scale(0.925);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        width: 95vw;
+
+        div.gradient-border {
+            margin: 0 0 0 12px;
+        }
+
+        h1 {
+            flex-grow: 1;
+            margin-left: -12px;
+            font-size: 16px;
+        }
+    }
+}
