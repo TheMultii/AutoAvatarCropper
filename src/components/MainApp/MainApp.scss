@@ -1,65 +1,3 @@
-header {
-    height: 100vh;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: start;
-
-    position: relative;
-
-    &::before {
-        position: absolute;
-        content: "";
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -2;
-        background-image: url("/bright-dreamy-background.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-    }
-
-    &::after {
-        position: absolute;
-        content: "";
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background-color: rgba(255, 255, 255, 0.45);
-    }
-
-    .container {
-        --margin: 12px;
-        width: 80vw;
-        height: calc(100vh - var(--margin) * 2);
-        margin: var(--margin);
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        h1 {
-            font-size: 80px;
-            line-height: 84px;
-            font-weight: 700;
-            margin: 0;
-        }
-
-        p {
-            color: #808080;
-            pointer-events: none;
-            user-select: none;
-        }
-    }
-}
-
 main {
     display: flex;
     flex-direction: column;
@@ -206,11 +144,6 @@ main {
 }
 
 @media screen and (max-width: 768px) {
-    header > .container > h1 {
-        font-size: 60px;
-        line-height: 64px;
-    }
-
     main .container {
         flex-direction: column-reverse;
     }
@@ -219,12 +152,5 @@ main {
         & > div {
             width: 100%;
         }
-    }
-}
-
-@media screen and (max-width: 400px) {
-    header > .container > h1 {
-        font-size: 45px;
-        line-height: 49px;
     }
 }

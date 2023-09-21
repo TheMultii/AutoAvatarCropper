@@ -1,0 +1,138 @@
+header {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        background-image: url("/bright-dreamy-background.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: rgba(255, 255, 255, 0.45);
+    }
+
+    .container {
+        --margin: 12px;
+        width: 80vw;
+        height: calc(100vh - var(--margin) * 2);
+        margin: var(--margin);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h1 {
+            font-size: 80px;
+            line-height: 84px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        p {
+            color: #808080;
+            pointer-events: none;
+            user-select: none;
+        }
+    }
+
+    .avatar-example {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        border-radius: 24px;
+        object-fit: cover;
+        opacity: 0.85;
+        pointer-events: none;
+        user-select: none;
+        animation: headerIMGAnimation 15s infinite ease-in-out alternate;
+
+        &:first-of-type {
+            --rotation: -10deg;
+            --animation-translated-direction: 1;
+            bottom: 18%;
+            left: 14%;
+            transform: rotate(var(--rotation));
+        }
+
+        &:last-of-type {
+            --rotation: 10deg;
+            --animation-translated-direction: -1;
+            bottom: 18%;
+            right: 14%;
+            transform: rotate(var(--rotation));
+            animation-delay: 150ms;
+        }
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    header .avatar-example {
+        &:first-of-type {
+            bottom: 10%;
+            left: 5%;
+        }
+
+        &:last-of-type {
+            bottom: 10%;
+            right: 5%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header > .container > h1 {
+        font-size: 60px;
+        line-height: 64px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    header > .container > h1 {
+        font-size: 45px;
+        line-height: 49px;
+    }
+
+    header .avatar-example {
+        display: none;
+    }
+}
+
+@keyframes headerIMGAnimation {
+    0% {
+        transform: scale(1) translateY(0) rotate(var(--rotation));
+    }
+
+    50% {
+        transform: scale(1.025)
+            translateY(calc(-10px * var(--animation-translated-direction)))
+            rotate(calc(var(--rotation) + 2deg));
+    }
+
+    100% {
+        transform: scale(1) translateY(0) rotate(var(--rotation));
+    }
+}
