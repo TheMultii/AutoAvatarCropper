@@ -110,6 +110,16 @@ nav {
             }
         }
     }
+
+    a {
+        text-decoration: none;
+
+        &.flex-link {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
 }
 
 @keyframes moveGradient {
