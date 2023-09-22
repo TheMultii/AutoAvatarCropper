@@ -96,6 +96,12 @@ input[type="file"] {
     font-size: smaller;
 }
 
+@media screen and (max-width: 768px) {
+    main .container.reversable {
+        flex-direction: column-reverse;
+    }
+}
+
 // circular progress bar
 
 $green: #008744;

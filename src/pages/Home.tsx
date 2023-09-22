@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import "./Home.scss";
+import "./styles/Home.scss";
 import classNames from "classnames";
 import { useSendAvatar } from "../hooks";
 import exampleImages from "../core/exampleImages.json";
@@ -164,7 +164,7 @@ export const Home = () => {
     };
 
     return (
-        <div className="container">
+        <div className="container reversable">
             <div className="grid grid-6 grid-6-gap">
                 <div className="item-card">
                     <h1>Input</h1>
