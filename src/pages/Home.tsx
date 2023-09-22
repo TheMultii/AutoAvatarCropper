@@ -92,6 +92,7 @@ export const Home = () => {
             !isUploadEnabled
         )
             return;
+        setIsUploadEnabled(false);
 
         let file = fileInputRef.current?.files?.[0];
         if (randomExampleImage !== null) {
@@ -106,6 +107,7 @@ export const Home = () => {
 
         setAvatar(URL.createObjectURL(blob));
         setIsDownloadable(true);
+        setIsUploadEnabled(true);
     };
 
     useEffect(() => {
@@ -116,12 +118,14 @@ export const Home = () => {
                 setErrorText(
                     "You have exceeded the limit of 20 requests per day. Please try again later."
                 );
+                setIsUploadEnabled(true);
                 return;
             }
             setErrorText("Something went wrong. Please try again later.");
         } catch (e) {
             setErrorText("Something went wrong. Please try again later.");
         }
+        setIsUploadEnabled(true);
     }, [error]);
 
     const downloadImage = () => {
