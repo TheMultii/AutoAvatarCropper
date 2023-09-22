@@ -95,6 +95,7 @@ export const Home = () => {
         )
             return;
         setIsUploadEnabled(false);
+        setErrorText(null);
 
         let file = fileInputRef.current?.files?.[0];
         if (randomExampleImage !== null) {
