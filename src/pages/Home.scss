@@ -1,0 +1,170 @@
+.drop-container {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px dashed #555;
+    color: #444;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+
+    &:hover,
+    &.drag-active {
+        background: #eee;
+        border-color: #111;
+    }
+
+    &:hover .drop-title,
+    &.drag-active .drop-title {
+        color: #222;
+    }
+}
+
+.drop-title {
+    color: #444;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    transition: color 0.2s ease-in-out;
+}
+
+input[type="file"] {
+    width: 350px;
+    max-width: 100%;
+    color: #444;
+    padding: 5px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #555;
+
+    &::file-selector-button {
+        margin-right: 20px;
+        border: none;
+        background-color: var(--primary);
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: #fff;
+        cursor: pointer;
+        transition: background 0.2s ease-in-out;
+    }
+
+    &::file-selector-button:hover {
+        background-color: color-mix(in srgb, var(--primary), #000 15%);
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.warning {
+    color: #ffc107;
+}
+
+.error {
+    color: #dc3545;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.mb-8px {
+    margin-bottom: 8px;
+}
+
+.container {
+    input[type="button"]:not(:only-child):last-of-type {
+        margin: 8px 0;
+        width: 35%;
+    }
+    input[type="button"]:not(:only-child):first-of-type {
+        margin: 24px 0 0;
+    }
+}
+
+.p-smaller {
+    font-size: smaller;
+}
+
+// circular progress bar
+
+$green: #008744;
+$blue: #0057e7;
+$red: #d62d20;
+$yellow: #ffa700;
+$white: #eee;
+
+$width: 100px;
+
+.loader {
+    width: $width;
+    height: $width;
+}
+
+.circular {
+    animation: rotate 2s linear infinite;
+    width: $width;
+    height: $width;
+    position: relative;
+}
+
+.path {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    stroke: #b6463a;
+    animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+    stroke-linecap: round;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35;
+    }
+
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124;
+    }
+}
+
+@keyframes color {
+    100%,
+    0% {
+        stroke: $red;
+    }
+
+    40% {
+        stroke: $blue;
+    }
+
+    66% {
+        stroke: $green;
+    }
+
+    80%,
+    90% {
+        stroke: $yellow;
+    }
+}

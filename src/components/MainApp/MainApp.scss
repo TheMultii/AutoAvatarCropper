@@ -48,6 +48,12 @@ main {
         justify-content: space-between;
         align-items: center;
 
+        > :nth-child(2):last-child {
+            display: flex;
+            flex-grow: 1;
+            align-items: center;
+        }
+
         h1 {
             font-weight: 500;
             position: relative;
@@ -68,6 +74,7 @@ main {
         .img {
             margin: 20px 0;
             width: 100%;
+            height: 100%;
             border-radius: 8px;
             flex: 1 0 auto;
             background-position: center center;
@@ -99,8 +106,15 @@ main {
         &:hover {
             background: color-mix(in srgb, var(--primary), #000 15%);
         }
+
         &:active {
             border-color: color-mix(in srgb, var(--primary), #000 40%);
+        }
+
+        &.disabled {
+            background: #ccc !important;
+            cursor: not-allowed;
+            border-color: transparent !important;
         }
 
         &.button-smaller {
@@ -119,6 +133,18 @@ main {
 
     .flex-grow {
         flex-grow: 1;
+    }
+
+    .flex-col {
+        flex-direction: column;
+    }
+
+    .flex-justify-center {
+        justify-content: center;
+    }
+
+    .flex-row {
+        flex-direction: row;
     }
 }
 
