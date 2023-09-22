@@ -7,7 +7,15 @@ const sendAvatar = (avatar: File) => {
         throw new Error("API endpoint not found");
     }
 
-    return axios.post(import.meta.env.VITE_API_ENDPOINT, avatar);
+    const form = new FormData();
+    form.append("image", avatar);
+
+    return axios.post(url, form, {
+        headers: {
+            "Content-Type": "multipart/form-data",
+        },
+        responseType: "blob",
+    });
 };
 
 export const useSendAvatar = () => {
