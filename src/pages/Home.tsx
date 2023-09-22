@@ -22,6 +22,8 @@ export const Home = () => {
 
     const [avatar, setAvatar] = useState<string | null>(null);
     const [errorText, setErrorText] = useState<string | null>(null);
+    const [registerEventsSwitch, setRegisterEventsSwitch] =
+        useState<boolean>(true);
 
     const isSquare = useMemo(async () => {
         if (!avatar) return true;
@@ -84,7 +86,7 @@ export const Home = () => {
             if (!fileInput) return;
             fileInput.removeEventListener("change", handleFileInputChange);
         };
-    }, []);
+    }, [registerEventsSwitch]);
 
     const sendAvatar = async () => {
         if (
@@ -151,6 +153,14 @@ export const Home = () => {
             exampleImages[Math.floor(Math.random() * exampleImages.length)];
         setRandomExampleImage(randomImage);
         setIsUploadEnabled(true);
+    };
+
+    const removeRandomImage = () => {
+        setRandomExampleImage(null);
+        setIsUploadEnabled(false);
+        if (fileInputRef.current) fileInputRef.current.value = "";
+
+        setRegisterEventsSwitch(!registerEventsSwitch);
     };
 
     return (
@@ -263,7 +273,7 @@ export const Home = () => {
                         type="button"
                         className="button-smaller"
                         value="Remove Example Image"
-                        onClick={() => setRandomExampleImage(null)}
+                        onClick={() => removeRandomImage()}
                     />
                     <p className="m-0 text-center p-smaller">
                         {randomExampleImage.creator}
