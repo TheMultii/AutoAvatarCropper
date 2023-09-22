@@ -23,15 +23,18 @@ export const Home = () => {
     const [avatar, setAvatar] = useState<string | null>(null);
     const [errorText, setErrorText] = useState<string | null>(null);
 
-    const isSquare = useMemo(() => {
-        if (!avatar) return false;
+    const isSquare = useMemo(async () => {
+        if (!avatar) return true;
 
-        const img = new Image();
-        img.src = avatar;
+        return new Promise((resolve) => {
+            const img = new Image();
+            img.src = avatar;
 
-        if (img.complete) {
-            return img.width === img.height;
-        }
+            img.onload = () => {
+                console.log(img.width, img.height, img.width === img.height);
+                resolve(img.width === img.height);
+            };
+        });
     }, [avatar]);
 
     useEffect(() => {
