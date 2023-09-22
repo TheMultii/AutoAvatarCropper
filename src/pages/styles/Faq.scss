@@ -1,0 +1,21 @@
+.faq_container {
+    text-align: left;
+    max-width: 1280px;
+    margin: 0 auto;
+
+    h2 {
+        margin: 0 0 8px;
+        font-weight: 600;
+    }
+
+    p {
+        margin: 0 0 16px;
+        color: #171717;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .faq_container p {
+        text-align: justify;
+    }
+}
