@@ -145,6 +145,8 @@ export const Home = () => {
     };
 
     const loadExampleImage = () => {
+        if (isLoading) return;
+
         const randomImage =
             exampleImages[Math.floor(Math.random() * exampleImages.length)];
         setRandomExampleImage(randomImage);
