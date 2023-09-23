@@ -16,6 +16,10 @@ body {
     color: var(--primary);
 }
 
+a {
+    color: initial;
+}
+
 a:visited {
     color: inherit;
 }
