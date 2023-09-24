@@ -23,3 +23,12 @@ a {
 a:visited {
     color: inherit;
 }
+
+input,
+textarea,
+button,
+select,
+a,
+div.hamburger-react {
+    -webkit-tap-highlight-color: transparent;
+}
