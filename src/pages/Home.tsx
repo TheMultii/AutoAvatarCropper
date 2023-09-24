@@ -156,7 +156,7 @@ export const Home = () => {
         setIsUploadEnabled(true);
     };
 
-    const removeRandomImage = () => {
+    const clearRandomImage = () => {
         setRandomExampleImage(null);
         setIsUploadEnabled(false);
         if (fileInputRef.current) fileInputRef.current.value = "";
@@ -260,27 +260,29 @@ export const Home = () => {
                     )}
                 </div>
             </div>
-            <input
-                type="button"
-                className="button-smaller"
-                value={`${
-                    randomExampleImage !== null ? "Another " : ""
-                }Example Image`}
-                onClick={() => loadExampleImage()}
-            />
-            {randomExampleImage !== null && (
-                <>
-                    <input
-                        type="button"
-                        className="button-smaller"
-                        value="Remove Example Image"
-                        onClick={() => removeRandomImage()}
-                    />
-                    <p className="m-0 text-center p-smaller">
-                        {randomExampleImage.creator}
-                    </p>
-                </>
-            )}
+            <div className="flex flex-col w-full flex-align-center small-mb-24">
+                <input
+                    type="button"
+                    className="button-smaller"
+                    value={`${
+                        randomExampleImage !== null ? "Another " : ""
+                    }Example Image`}
+                    onClick={() => loadExampleImage()}
+                />
+                {randomExampleImage !== null && (
+                    <>
+                        <input
+                            type="button"
+                            className="button-smaller"
+                            value="Clear Example Image"
+                            onClick={() => clearRandomImage()}
+                        />
+                        <p className="m-0 text-center p-smaller">
+                            {randomExampleImage.creator}
+                        </p>
+                    </>
+                )}
+            </div>
         </div>
     );
 };

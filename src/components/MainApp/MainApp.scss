@@ -170,9 +170,15 @@ main {
 }
 
 @media screen and (max-width: 768px) {
-    main .grid-6 {
-        & > div {
-            width: 100%;
+    main {
+        .container {
+            width: 95vw;
+        }
+
+        .grid-6 {
+            & > div {
+                width: 100%;
+            }
         }
     }
 }
