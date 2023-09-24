@@ -45,7 +45,12 @@ export const Footer = () => {
                 <h1>Auto Avatar Cropper</h1>
                 <h2>
                     Copyright © {copyrightDateRange} —{" "}
-                    <span className="primary">Marcel Gańczarczyk</span>
+                    <a
+                        href="https://mganczarczyk.pl"
+                        className="primary a_noDecoration"
+                    >
+                        Marcel Gańczarczyk
+                    </a>
                 </h2>
                 <p>
                     Have a look at my code on{" "}

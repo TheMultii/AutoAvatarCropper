@@ -49,6 +49,10 @@ footer {
         margin: 12px 0 0 0;
         font-size: 11px;
     }
+
+    a.a_noDecoration {
+        text-decoration: none;
+    }
 }
 
 @media screen and (max-width: 768px) {
